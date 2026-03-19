@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}{{ site.title }}{% endblock %}
+
+{% block content %}
+<section class="min-h-screen flex items-center justify-center px-6">
+  <div class="max-w-5xl w-full py-24">
+    <header class="text-center mb-14">
+      <h1 class="text-5xl md:text-7xl font-bold tracking-tight">{{ site.title }}</h1>
+      <p class="mt-4 text-xl md:text-2xl text-white/85">{{ site.tagline }}</p>
+      <p class="mt-6 text-lg text-white/80">
+        <span>{{ site.event_date }}</span>
+        <span class="mx-2">|</span>
+        <span>{{ site.venue }}</span>
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="{{ site.tickets_url|default:'#' }}"
+           class="rounded-xl bg-white text-black px-6 py-3 font-semibold hover:bg-white/90 transition">
+          {{ site.tickets_label|default:'Tickets' }}
+        </a>
+        <a href="{{ site.schedule_url|default:'#' }}"
+           class="rounded-xl border border-white/60 px-6 py-3 font-semibold hover:bg-white/10 transition">
+          View Schedule
+        </a>
+      </div>
+
+      {% if site.community_url %}
+        <p class="mt-4 text-sm text-white/70">
+          Join our community:
+          <a href="{{ site.community_url }}" class="underline" target="_blank" rel="noreferrer">{{ site.community_url }}</a>
+        </p>
+      {% endif %}
+    </header>
+
+    <section class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-6">Speakers</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {% for speaker in speakers %}
+          <article class="rounded-xl border border-white/15 bg-black/20 p-5">
+            <h3 class="text-xl font-semibold">{{ speaker.name }}</h3>
+            <p class="text-white/70 text-sm mt-1">{{ speaker.title }}</p>
+            <p class="text-white/85 mt-3">{{ speaker.topic }}</p>
+            {% if speaker.image_url %}
+              <a class="inline-block mt-4 text-sm underline" href="{{ speaker.image_url }}" target="_blank" rel="noreferrer">Profile Image</a>
+            {% endif %}
+          </article>
+        {% empty %}
+          <p class="text-white/70">No speakers published yet. Add speakers in admin.</p>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+</section>
+{% endblock %}

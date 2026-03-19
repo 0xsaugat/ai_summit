@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ site.title|default:'The Startup Network' }}{% endblock %}</title>
+  <meta name="description" content="{{ site.tagline|default:'Startup and AI community platform' }}">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: radial-gradient(circle at 20% 10%, #262626 0%, #111111 45%, #050505 100%);
+      min-height: 100vh;
+    }
+  </style>
+</head>
+<body class="text-white antialiased">
+  {% include "nav.html" %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
