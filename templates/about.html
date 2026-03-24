@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}About | The Startup Network Nepal{% endblock %}
+
+{% block hero %}
+<header class="page-hero">
+  <div class="page-shell" data-reveal>
+    <p class="page-kicker">About</p>
+    <h1 class="page-title">About, Team, and Community in One Place.</h1>
+    <p class="page-subtitle mb-8">Explore the TSN mission, meet the people driving execution, and discover the founder community programs that power the ecosystem.</p>
+    <div class="flex flex-wrap gap-3" data-stagger>
+      <a href="#about-section" class="px-4 py-2 rounded-lg bg-primary text-on-primary text-xs uppercase tracking-[0.2em] font-bold" data-reveal>About</a>
+      <a href="#team-section" class="px-4 py-2 rounded-lg border border-outline-variant text-on-surface text-xs uppercase tracking-[0.2em] font-bold" data-reveal>Team</a>
+      <a href="#community-section" class="px-4 py-2 rounded-lg border border-outline-variant text-on-surface text-xs uppercase tracking-[0.2em] font-bold" data-reveal>Community</a>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section id="about-section" class="content-section bg-surface" data-reveal>
+  <div class="page-shell grid grid-cols-1 md:grid-cols-3 gap-6" data-stagger>
+    <article class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20"><p class="text-primary text-3xl font-black mb-3">01</p><h3 class="text-xl font-bold mb-3">Mission</h3><p class="text-sm text-on-surface-variant">Accelerate founders from ideation to market impact with institutional support.</p></article>
+    <article class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20"><p class="text-primary text-3xl font-black mb-3">02</p><h3 class="text-xl font-bold mb-3">Vision</h3><p class="text-sm text-on-surface-variant">Position Kathmandu as South Asia's next startup and innovation corridor.</p></article>
+    <article class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20"><p class="text-primary text-3xl font-black mb-3">03</p><h3 class="text-xl font-bold mb-3">Values</h3><p class="text-sm text-on-surface-variant">Execution, collaboration, and sustainable long-term growth.</p></article>
+  </div>
+  <div class="page-shell mt-8 grid grid-cols-1 md:grid-cols-3 gap-4" data-stagger>
+    <div class="rounded-2xl overflow-hidden border border-outline-variant/20" data-reveal data-parallax data-parallax-speed="0.05"><img src="/media/img1.jpeg" alt="Founder collaboration at TSN" class="w-full h-52 object-cover" /></div>
+    <div class="rounded-2xl overflow-hidden border border-outline-variant/20" data-reveal data-parallax data-parallax-speed="0.07"><img src="/media/img2.jpeg" alt="Summit stage and audience" class="w-full h-52 object-cover" /></div>
+    <div class="rounded-2xl overflow-hidden border border-outline-variant/20" data-reveal data-parallax data-parallax-speed="0.09"><img src="/media/img3.jpeg" alt="Ecosystem networking moment" class="w-full h-52 object-cover" /></div>
+  </div>
+</section>
+
+<section id="team-section" class="content-section bg-surface-container-lowest" data-reveal>
+  <div class="page-shell mb-10">
+    <p class="page-kicker">Team</p>
+    <h2 class="text-4xl font-bold tracking-tight mb-3">The Builders Behind TSN.</h2>
+    <p class="text-on-surface-variant">A collective of operators, advisors, and ecosystem leaders shaping Nepal's startup future.</p>
+  </div>
+
+  <div class="page-shell grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10" data-stagger>
+    <article class="rounded-2xl overflow-hidden border border-outline-variant/20 bg-surface-container-low" data-reveal><img src="/media/img7.jpeg" alt="Team member" class="w-full h-56 object-cover" data-parallax data-parallax-speed="0.08" /><div class="p-4"><h3 class="font-bold">Leadership Team</h3><p class="text-sm text-on-surface-variant">Core strategy and execution.</p></div></article>
+    <article class="rounded-2xl overflow-hidden border border-outline-variant/20 bg-surface-container-low" data-reveal><img src="/media/img8.jpeg" alt="Advisors" class="w-full h-56 object-cover" data-parallax data-parallax-speed="0.1" /><div class="p-4"><h3 class="font-bold">Board of Advisors</h3><p class="text-sm text-on-surface-variant">Global guidance and insight.</p></div></article>
+    <article class="rounded-2xl overflow-hidden border border-outline-variant/20 bg-surface-container-low" data-reveal><img src="/media/img9.jpeg" alt="Community team" class="w-full h-56 object-cover" data-parallax data-parallax-speed="0.06" /><div class="p-4"><h3 class="font-bold">Community Team</h3><p class="text-sm text-on-surface-variant">Founder care and ecosystem growth.</p></div></article>
+  </div>
+
+  <div class="page-shell" data-reveal>
+    <h3 class="text-3xl font-bold mb-4">Organizing Team</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" data-stagger>
+      <article class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="font-bold">Dr. Sudeep Rauniar</p><p class="text-sm text-on-surface-variant">Founder</p></article>
+      <article class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="font-bold">Sailaj Mangal Joshi</p><p class="text-sm text-on-surface-variant">Founder</p></article>
+      <article class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="font-bold">Piyush Mahat</p><p class="text-sm text-on-surface-variant">CEO</p></article>
+      <article class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="font-bold">Aditya Jha</p><p class="text-sm text-on-surface-variant">COM</p></article>
+      <article class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="font-bold">Saugat Ojha</p><p class="text-sm text-on-surface-variant">COO</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="community-section" class="content-section bg-surface" data-reveal>
+  <div class="page-shell mb-10">
+    <p class="page-kicker">Community</p>
+    <h2 class="text-4xl font-bold tracking-tight mb-3">Nepal's Most Active Founder Network.</h2>
+    <p class="text-on-surface-variant">Connect, learn, and co-build with peers across Kathmandu and beyond.</p>
+  </div>
+  <div class="page-shell grid grid-cols-1 md:grid-cols-3 gap-6" data-stagger>
+    <article class="rounded-2xl overflow-hidden bg-surface-container-low border border-outline-variant/20" data-reveal>
+      <img src="/media/img4.jpeg" alt="Monthly founder event" class="w-full h-44 object-cover" data-parallax data-parallax-speed="0.06" />
+      <div class="p-6"><h3 class="text-xl font-bold mb-2">Monthly Founder Nights</h3><p class="text-sm text-on-surface-variant">Live sessions, networking, and product showcases.</p></div>
+    </article>
+    <article class="rounded-2xl overflow-hidden bg-surface-container-low border border-outline-variant/20" data-reveal>
+      <img src="/media/img5.jpeg" alt="Mentor office hour session" class="w-full h-44 object-cover" data-parallax data-parallax-speed="0.08" />
+      <div class="p-6"><h3 class="text-xl font-bold mb-2">Mentor Office Hours</h3><p class="text-sm text-on-surface-variant">Direct support from seasoned operators and investors.</p></div>
+    </article>
+    <article class="rounded-2xl overflow-hidden bg-surface-container-low border border-outline-variant/20" data-reveal>
+      <img src="/media/img6.jpeg" alt="Partner collaboration event" class="w-full h-44 object-cover" data-parallax data-parallax-speed="0.1" />
+      <div class="p-6"><h3 class="text-xl font-bold mb-2">Partner Collaborations</h3><p class="text-sm text-on-surface-variant">Cross-sector opportunities with ecosystem institutions.</p></div>
+    </article>
+  </div>
+</section>
+{% include "footer.html" %}
+{% endblock %}

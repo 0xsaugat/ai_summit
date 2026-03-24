@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Team | The Startup Network Nepal{% endblock %}
+
+{% block hero %}
+<header class="page-hero">
+  <div class="page-shell" data-reveal>
+    <p class="page-kicker">Team</p>
+    <h1 class="page-title">The Builders Behind TSN.</h1>
+    <p class="page-subtitle">A collective of operators, investors, and mentors shaping Nepal's startup future.</p>
+  </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="content-section bg-surface" data-reveal>
+  <div class="page-shell grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10" data-stagger>
+    <article class="rounded-2xl overflow-hidden border border-outline-variant/20 bg-surface-container-low"><img src="/media/img7.jpeg" alt="Team member" class="w-full h-56 object-cover" data-parallax data-parallax-speed="0.08" /><div class="p-4"><h3 class="font-bold">Leadership Team</h3><p class="text-sm text-on-surface-variant">Core strategy and execution.</p></div></article>
+    <article class="rounded-2xl overflow-hidden border border-outline-variant/20 bg-surface-container-low"><img src="/media/img8.jpeg" alt="Advisors" class="w-full h-56 object-cover" data-parallax data-parallax-speed="0.1" /><div class="p-4"><h3 class="font-bold">Board of Advisors</h3><p class="text-sm text-on-surface-variant">Global guidance and insight.</p></div></article>
+    <article class="rounded-2xl overflow-hidden border border-outline-variant/20 bg-surface-container-low"><img src="/media/img9.jpeg" alt="Community team" class="w-full h-56 object-cover" data-parallax data-parallax-speed="0.06" /><div class="p-4"><h3 class="font-bold">Community Team</h3><p class="text-sm text-on-surface-variant">Founder care and ecosystem growth.</p></div></article>
+  </div>
+
+  <div class="page-shell" data-reveal>
+    <h2 class="text-3xl font-bold mb-4">Organizing Team</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" data-stagger>
+      <article class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="font-bold">Dr. Sudeep Rauniar</p><p class="text-sm text-on-surface-variant">Founder</p></article>
+      <article class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="font-bold">Sailaj Mangal Joshi</p><p class="text-sm text-on-surface-variant">Founder</p></article>
+      <article class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="font-bold">Piyush Mahat</p><p class="text-sm text-on-surface-variant">CEO</p></article>
+      <article class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="font-bold">Aditya Jha</p><p class="text-sm text-on-surface-variant">COM</p></article>
+      <article class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="font-bold">Saugat Ojha</p><p class="text-sm text-on-surface-variant">COO</p></article>
+    </div>
+  </div>
+</section>
+{% include "footer.html" %}
+{% endblock %}

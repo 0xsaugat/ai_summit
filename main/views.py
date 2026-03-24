@@ -1,29 +1,69 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse
 
-from .models import NavLink, SiteContent, Speaker
+from .forms import ApplicationForm, TicketBookingForm
 
 
 def landing_page(request):
-	site = SiteContent.objects.filter(active=True).order_by("-id").first()
-
-	if site is None:
-		site = {
-			"title": "AI Conf 2026",
-			"tagline": "Nepal's premier conference for people building the future with AI",
-			"event_date": "Jan 10-11, 2026",
-			"venue": "The Plaza, Kathmandu, Nepal",
-			"tickets_label": "Tickets Sold Out",
-			"tickets_url": "#",
-			"schedule_url": "#",
-			"community_url": "https://community.wwktm.com",
-		}
-
-	nav_links = NavLink.objects.filter(is_active=True)
-	speakers = Speaker.objects.filter(is_active=True)
+	if request.method == "POST":
+		form = TicketBookingForm(request.POST)
+		if form.is_valid():
+			booking = form.save()
+			return HttpResponseRedirect(f"{reverse('main:landing')}?booked=1&ref={booking.booking_reference}#tickets")
+	else:
+		form = TicketBookingForm(initial={"pass_type": "pro", "quantity": 1})
 
 	context = {
-		"site": site,
-		"nav_links": nav_links,
-		"speakers": speakers,
+		"ticket_form": form,
+		"booking_success": request.GET.get("booked") == "1",
+		"booking_reference": request.GET.get("ref", ""),
 	}
 	return render(request, "landing.html", context)
+
+
+def about_page(request):
+	return render(request, "about.html")
+
+
+def programs_page(request):
+	return render(request, "programs.html")
+
+
+def events_page(request):
+	return render(request, "events.html")
+
+
+def ai_summit_page(request):
+	return render(request, "ai_summit.html")
+
+
+def gallery_page(request):
+	return render(request, "gallery.html")
+
+
+def team_page(request):
+	return HttpResponseRedirect(f"{reverse('main:about')}#team-section")
+
+
+def community_page(request):
+	return HttpResponseRedirect(f"{reverse('main:about')}#community-section")
+
+
+def apply_page(request):
+	if request.method == "POST":
+		form = ApplicationForm(request.POST)
+		if form.is_valid():
+			application = form.save()
+			return HttpResponseRedirect(
+				f"{reverse('main:apply')}?submitted=1&ref={application.application_reference}"
+			)
+	else:
+		form = ApplicationForm(initial={"role": "founder"})
+
+	context = {
+		"application_form": form,
+		"application_success": request.GET.get("submitted") == "1",
+		"application_reference": request.GET.get("ref", ""),
+	}
+	return render(request, "apply.html", context)

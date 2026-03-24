@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}AI Summit 2026 | The Startup Network Nepal{% endblock %}
+
+{% block hero %}
+<header class="page-hero overflow-hidden">
+  <div class="absolute inset-0 opacity-40" data-parallax data-parallax-speed="0.04"><img src="/media/img5.jpeg" alt="AI Summit background" class="w-full h-full object-cover" /></div>
+  <div class="relative z-10 page-shell text-center" data-reveal>
+    <p class="page-kicker">AI Summit 2026</p>
+    <h1 class="page-title">Nepal's Flagship AI Gathering.</h1>
+    <p class="page-subtitle mx-auto">Summit + workshops + startup pitches in Kathmandu.</p>
+  </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="content-section bg-surface" data-reveal>
+  <div class="page-shell grid grid-cols-2 md:grid-cols-4 gap-5" data-stagger>
+    <div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/20"><p class="text-primary text-3xl font-black">500+</p><p class="text-xs uppercase tracking-[0.2em] text-on-surface-variant">Attendees</p></div>
+    <div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/20"><p class="text-primary text-3xl font-black">50+</p><p class="text-xs uppercase tracking-[0.2em] text-on-surface-variant">Speakers</p></div>
+    <div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/20"><p class="text-primary text-3xl font-black">20</p><p class="text-xs uppercase tracking-[0.2em] text-on-surface-variant">Partners</p></div>
+    <div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/20"><p class="text-primary text-3xl font-black">2</p><p class="text-xs uppercase tracking-[0.2em] text-on-surface-variant">Days</p></div>
+  </div>
+</section>
+{% include "footer.html" %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Community | The Startup Network Nepal{% endblock %}
+
+{% block hero %}
+<header class="page-hero">
+  <div class="page-shell grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+    <div data-reveal>
+      <p class="page-kicker">Community</p>
+      <h1 class="page-title">Nepal's Most Active Founder Network.</h1>
+      <p class="page-subtitle">Connect, learn, and co-build with peers across Kathmandu and beyond.</p>
+    </div>
+    <div class="rounded-2xl overflow-hidden border border-outline-variant/20" data-reveal data-parallax data-parallax-speed="0.09"><img src="/media/img3.jpeg" alt="Community event" class="w-full h-80 object-cover" /></div>
+  </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="content-section bg-surface-container-lowest" data-reveal>
+  <div class="page-shell grid grid-cols-1 md:grid-cols-3 gap-6" data-stagger>
+    <article class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20"><h3 class="text-xl font-bold mb-2">Monthly Founder Nights</h3><p class="text-sm text-on-surface-variant">Live sessions, networking, and product showcases.</p></article>
+    <article class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20"><h3 class="text-xl font-bold mb-2">Mentor Office Hours</h3><p class="text-sm text-on-surface-variant">Direct support from seasoned operators and investors.</p></article>
+    <article class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20"><h3 class="text-xl font-bold mb-2">Partner Collaborations</h3><p class="text-sm text-on-surface-variant">Cross-sector opportunities with ecosystem institutions.</p></article>
+  </div>
+</section>
+{% include "footer.html" %}
+{% endblock %}

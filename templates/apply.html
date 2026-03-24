@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Apply | The Startup Network Nepal{% endblock %}
+
+{% block hero %}
+<header class="page-hero">
+  <div class="page-shell" data-reveal>
+    <p class="page-kicker">Apply Now</p>
+    <h1 class="page-title">Join Cohort 5 and Build at Velocity.</h1>
+    <p class="page-subtitle">Whether you are a founder, mentor, or partner, there is a path for you in the TSN ecosystem.</p>
+  </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="content-section bg-surface" data-reveal>
+  <div class="page-shell max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8">
+    <form method="post" action="{% url 'main:apply' %}" class="space-y-5 p-7 rounded-2xl bg-surface-container-low border border-outline-variant/20" data-stagger>
+      {% csrf_token %}
+
+      {% if application_success %}
+        <div class="rounded-lg border border-green-400/40 bg-green-400/10 px-4 py-3 text-sm text-green-200">
+          Application submitted successfully. Reference: <span class="font-bold">{{ application_reference }}</span>
+        </div>
+      {% endif %}
+
+      {% if application_form.non_field_errors %}
+        <div class="rounded-lg border border-red-400/40 bg-red-400/10 px-4 py-3 text-sm text-red-200">
+          {{ application_form.non_field_errors }}
+        </div>
+      {% endif %}
+
+      <div>
+        <label for="id_full_name" class="block text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-2">Full Name</label>
+        <input id="id_full_name" name="full_name" type="text" value="{{ application_form.full_name.value|default:'' }}" placeholder="Your name" class="w-full rounded-lg bg-surface border border-outline-variant/30 px-4 py-3" required />
+        {% if application_form.full_name.errors %}<p class="mt-1 text-xs text-red-300">{{ application_form.full_name.errors.0 }}</p>{% endif %}
+      </div>
+
+      <div>
+        <label for="id_email" class="block text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-2">Email</label>
+        <input id="id_email" name="email" type="email" value="{{ application_form.email.value|default:'' }}" placeholder="you@example.com" class="w-full rounded-lg bg-surface border border-outline-variant/30 px-4 py-3" required />
+        {% if application_form.email.errors %}<p class="mt-1 text-xs text-red-300">{{ application_form.email.errors.0 }}</p>{% endif %}
+      </div>
+
+      <div>
+        <label for="id_role" class="block text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-2">Role</label>
+        <select id="id_role" name="role" class="w-full rounded-lg bg-surface border border-outline-variant/30 px-4 py-3" required>
+          <option value="founder" {% if application_form.role.value == 'founder' or not application_form.role.value %}selected{% endif %}>Founder</option>
+          <option value="mentor" {% if application_form.role.value == 'mentor' %}selected{% endif %}>Mentor</option>
+          <option value="investor" {% if application_form.role.value == 'investor' %}selected{% endif %}>Investor</option>
+          <option value="partner" {% if application_form.role.value == 'partner' %}selected{% endif %}>Partner</option>
+        </select>
+        {% if application_form.role.errors %}<p class="mt-1 text-xs text-red-300">{{ application_form.role.errors.0 }}</p>{% endif %}
+      </div>
+
+      <div>
+        <label for="id_message" class="block text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-2">Message (Optional)</label>
+        <textarea id="id_message" name="message" rows="4" placeholder="Tell us about your profile" class="w-full rounded-lg bg-surface border border-outline-variant/30 px-4 py-3">{{ application_form.message.value|default:'' }}</textarea>
+        {% if application_form.message.errors %}<p class="mt-1 text-xs text-red-300">{{ application_form.message.errors.0 }}</p>{% endif %}
+      </div>
+
+      <button type="submit" class="w-full rounded-lg bg-primary text-on-primary font-bold py-3">Submit Application</button>
+    </form>
+    <div class="rounded-2xl overflow-hidden border border-outline-variant/20" data-parallax data-parallax-speed="0.08"><img src="/media/img2.jpeg" alt="Apply to TSN" class="w-full h-full min-h-[420px] object-cover" /></div>
+  </div>
+</section>
+{% include "footer.html" %}
+{% endblock %}

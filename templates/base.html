@@ -1,23 +1,310 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}{{ site.title|default:'The Startup Network' }}{% endblock %}</title>
-  <meta name="description" content="{{ site.tagline|default:'Startup and AI community platform' }}">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>{% block title %}The Startup Network Nepal{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}The Startup Network Nepal{% endblock %}">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-lowest": "#000000",
+            "surface-dim": "#050505",
+            "on-tertiary-container": "#f9fbfc",
+            "surface-container-low": "#0a0a0a",
+            "on-primary-fixed": "#001a40",
+            "outline-variant": "#434750",
+            "secondary-container": "#2ca628",
+            "on-tertiary-fixed-variant": "#444748",
+            "primary-container": "#4e73b7",
+            "on-background": "#e5e2e1",
+            "surface-container": "#101010",
+            "on-surface-variant": "#c3c6d2",
+            "secondary": "#68df5b",
+            "on-surface": "#e5e2e1",
+            "error-container": "#93000a",
+            "tertiary-fixed-dim": "#c4c7c8",
+            "on-tertiary": "#2e3132",
+            "surface-variant": "#353535",
+            "primary-fixed-dim": "#acc7ff",
+            "on-primary-container": "#fcfaff",
+            "inverse-primary": "#375da0",
+            "on-primary-fixed-variant": "#1a4586",
+            "surface-container-high": "#161616",
+            "on-secondary": "#003a02",
+            "surface": "#050505",
+            "primary": "#acc7ff",
+            "error": "#ffb4ab",
+            "secondary-fixed-dim": "#68df5b",
+            "on-secondary-fixed-variant": "#005305",
+            "tertiary-fixed": "#e1e3e4",
+            "tertiary-container": "#717475",
+            "background": "#000000",
+            "secondary-fixed": "#85fd74",
+            "primary-fixed": "#d7e2ff",
+            "inverse-surface": "#e5e2e1",
+            "surface-tint": "#acc7ff",
+            "tertiary": "#c4c7c8",
+            "on-secondary-fixed": "#002201",
+            "on-tertiary-fixed": "#191c1d",
+            "inverse-on-surface": "#1d1d1d",
+            "surface-container-highest": "#202020",
+            "outline": "#8d909b",
+            "on-error-container": "#ffdad6",
+            "on-error": "#690005",
+            "on-secondary-container": "#003202",
+            "surface-bright": "#393939",
+            "on-primary": "#002e68"
+          },
+          fontFamily: {
+            "headline": ["Space Mono", "monospace"],
+            "body": ["Space Mono", "monospace"],
+            "label": ["Space Mono", "monospace"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"}
+        }
+      }
+    }
+  </script>
+  {% block head_extra %}{% endblock %}
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
     body {
-      background: radial-gradient(circle at 20% 10%, #262626 0%, #111111 45%, #050505 100%);
-      min-height: 100vh;
+      font-family: 'Space Mono', monospace;
+      background-color: #000000;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Space Mono', monospace;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display SC', serif;
+    }
+
+    #hero-react-root {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 2rem;
+    }
+
+    .custom-rays {
+      position: absolute;
+      inset: 0;
+      opacity: 0.22;
+      filter: blur(0.6px);
+    }
+
+    .page-hero {
+      position: relative;
+      min-height: 56vh;
+      display: flex;
+      align-items: center;
+      padding: 7rem 1.5rem 2.5rem;
+      background: linear-gradient(180deg, #000000 0%, #040404 100%);
+      border-bottom: 1px solid rgba(141, 144, 155, 0.2);
+    }
+
+    .page-shell {
+      max-width: 80rem;
+      margin: 0 auto;
+      width: 100%;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .page-kicker {
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #acc7ff;
+      margin-bottom: 1rem;
+    }
+
+    .page-title {
+      font-family: 'Playfair Display SC', serif;
+      font-size: clamp(2.2rem, 6vw, 4.8rem);
+      line-height: 0.95;
+      color: #e5e2e1;
+      margin-bottom: 1rem;
+    }
+
+    .page-subtitle {
+      color: #c3c6d2;
+      max-width: 50rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .content-section {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+
+    .panel-card {
+      border-radius: 1rem;
+      border: 1px solid rgba(141, 144, 155, 0.24);
+      background: #1b1c1c;
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translate3d(0, 34px, 0) scale(0.985);
+      filter: blur(6px);
+      transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1), transform 700ms cubic-bezier(0.22, 1, 0.36, 1), filter 700ms cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: var(--reveal-delay, 0ms);
+      will-change: transform, opacity, filter;
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+      filter: blur(0);
+    }
+
+    [data-parallax] {
+      transform: translate3d(0, var(--parallax-y, 0px), 0) scale(var(--parallax-scale, 1));
+      will-change: transform;
+      transition: transform 120ms linear;
+    }
+
+    [data-stagger] > * {
+      --reveal-delay: 0ms;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] {
+        opacity: 1;
+        filter: none;
+        transform: none;
+        transition: none;
+      }
+
+      [data-parallax] {
+        transform: none;
+        transition: none;
+      }
     }
   </style>
 </head>
-<body class="text-white antialiased">
-  {% include "nav.html" %}
+<body class="{% block body_class %}text-white antialiased{% endblock %}">
+  <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.35)]">
+    <div class="flex justify-between items-center px-8 py-4 max-w-full">
+      <a href="{% url 'main:landing' %}" class="leading-none flex items-center ml-3" data-reveal>
+        <img src="/media/white-icon.png" alt="TSN Logo" class="h-16 w-16 object-contain" />
+      </a>
+      {% include "navbar.html" %}
+    </div>
+  </nav>
+
+  {% block hero %}
+  <header class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden pt-20">
+    <div id="hero-react-root" class="absolute inset-0 z-[1] pointer-events-none"></div>
+    <div class="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center" data-reveal>
+      <div class="mb-6 inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/20" data-reveal>
+        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+        <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant">Est. 2022 · Kathmandu, Nepal</span>
+      </div>
+      <h1 class="hero-title text-[clamp(3rem,8vw,5.5rem)] font-extrabold tracking-[-0.04em] leading-[0.95] mb-8 text-[#e5e2e1]" data-reveal>
+        AI Summit <br/> 2026
+      </h1>
+      <p class="text-xl md:text-2xl font-light text-on-surface-variant max-w-2xl mx-auto mb-12 leading-relaxed" data-reveal>
+        Policy, Technology and Development
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4" data-reveal>
+        <a class="px-10 py-4 bg-primary text-on-primary font-bold rounded-xl text-lg hover:shadow-[0_0_20px_rgba(172,199,255,0.3)] transition-all" href="{% url 'main:programs' %}">Explore Programs</a>
+        <a class="px-10 py-4 border border-outline-variant text-on-surface font-bold rounded-xl text-lg hover:bg-surface-container-high transition-all" href="{% url 'main:events' %}">Watch Our Story →</a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 text-left w-full max-w-4xl" data-stagger>
+        <div class="bg-surface-container-low/70 border border-outline-variant/15 rounded-xl p-4">
+          <div class="text-3xl font-black text-primary">1000+</div>
+          <div class="text-[10px] tracking-[0.2em] uppercase text-on-surface-variant">Attendees</div>
+        </div>
+        <div class="bg-surface-container-low/70 border border-outline-variant/15 rounded-xl p-4">
+          <div class="text-3xl font-black text-primary">50+</div>
+          <div class="text-[10px] tracking-[0.2em] uppercase text-on-surface-variant">Speakers</div>
+        </div>
+        <div class="bg-surface-container-low/70 border border-outline-variant/15 rounded-xl p-4">
+          <div class="text-3xl font-black text-primary">70+</div>
+          <div class="text-[10px] tracking-[0.2em] uppercase text-on-surface-variant">Startups</div>
+        </div>
+        <div class="bg-surface-container-low/70 border border-outline-variant/15 rounded-xl p-4">
+          <div class="text-3xl font-black text-primary">20</div>
+          <div class="text-[10px] tracking-[0.2em] uppercase text-on-surface-variant">Partners</div>
+        </div>
+      </div>
+      <div class="mt-10 text-[10px] uppercase tracking-[0.4em] text-on-surface-variant">Scroll</div>
+    </div>
+  </header>
+  {% endblock %}
 
   <main>
     {% block content %}{% endblock %}
   </main>
+
+  <script src="{% static 'react-hero/hero-react.js' %}"></script>
+  <script>
+    (function () {
+      var revealElements = Array.prototype.slice.call(document.querySelectorAll('[data-reveal], [data-stagger] > *'));
+      revealElements.forEach(function (el, index) {
+        if (!el.style.getPropertyValue('--reveal-delay')) {
+          var delay = (index % 8) * 70;
+          el.style.setProperty('--reveal-delay', delay + 'ms');
+        }
+      });
+
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+      revealElements.forEach(function (el) {
+        revealObserver.observe(el);
+      });
+
+      var parallaxNodes = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
+      if (parallaxNodes.length) {
+        var updateParallax = function () {
+          var viewportHeight = window.innerHeight || 1;
+          parallaxNodes.forEach(function (node) {
+            var speed = parseFloat(node.getAttribute('data-parallax-speed') || '0.14');
+            var scale = parseFloat(node.getAttribute('data-parallax-scale') || '1');
+            var rect = node.getBoundingClientRect();
+            var midpoint = rect.top + rect.height / 2;
+            var offset = (midpoint - viewportHeight / 2) * speed;
+            node.style.setProperty('--parallax-y', (-offset).toFixed(2) + 'px');
+            node.style.setProperty('--parallax-scale', scale.toString());
+          });
+        };
+
+        var ticking = false;
+        var onScroll = function () {
+          if (!ticking) {
+            window.requestAnimationFrame(function () {
+              updateParallax();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        };
+
+        updateParallax();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', updateParallax);
+      }
+    })();
+  </script>
 </body>
 </html>

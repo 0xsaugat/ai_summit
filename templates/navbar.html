@@ -1,0 +1,18 @@
+<div class="hidden md:flex items-center space-x-8 font-medium tracking-tight text-sm">
+  <div class="relative group">
+    <a class="text-[#e5e2e1] hover:text-[#acc7ff] transition-colors inline-flex items-center gap-1" href="{% url 'main:about' %}">
+      About
+      <span class="material-symbols-outlined text-base leading-none">keyboard_arrow_down</span>
+    </a>
+    <div class="absolute top-full left-0 mt-3 w-52 rounded-xl border border-outline-variant/20 bg-black/95 backdrop-blur-lg p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200">
+      <a class="block rounded-lg px-3 py-2 text-[#e5e2e1] hover:bg-white/10 hover:text-[#acc7ff] transition-colors" href="{% url 'main:about' %}#about-section">About</a>
+      <a class="block rounded-lg px-3 py-2 text-[#e5e2e1] hover:bg-white/10 hover:text-[#acc7ff] transition-colors" href="{% url 'main:about' %}#team-section">Team</a>
+      <a class="block rounded-lg px-3 py-2 text-[#e5e2e1] hover:bg-white/10 hover:text-[#acc7ff] transition-colors" href="{% url 'main:about' %}#community-section">Community</a>
+    </div>
+  </div>
+  <a class="text-[#e5e2e1] hover:text-[#acc7ff] transition-colors" href="{% url 'main:programs' %}">Programs</a>
+  <a class="text-[#e5e2e1] hover:text-[#acc7ff] transition-colors" href="{% url 'main:events' %}">Events</a>
+  <a class="text-[#e5e2e1] hover:text-[#acc7ff] transition-colors" href="{% url 'main:ai_summit' %}">AI Summit</a>
+  <a class="text-[#e5e2e1] hover:text-[#acc7ff] transition-colors" href="{% url 'main:gallery' %}">Gallery</a>
+  <a class="text-[#acc7ff] hover:text-white transition-colors" href="{% url 'main:apply' %}">Apply</a>
+</div>

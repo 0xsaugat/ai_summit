@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+
+{% block title %}Events | The Startup Network Nepal{% endblock %}
+
+{% block hero %}
+  <header class="page-hero min-h-[70vh] justify-center overflow-hidden">
+    <div id="hero-react-root" class="absolute inset-0 z-[1] pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-primary-container/20 via-surface to-surface"></div>
+    <div class="relative z-10 page-shell text-center" data-reveal>
+      <p class="page-kicker">- Our Journey</p>
+      <h1 class="page-title text-[clamp(2.6rem,7vw,5.8rem)] tracking-[-0.04em] mb-8">
+        The Archive of<br/>Impact.
+      </h1>
+      <p class="page-subtitle max-w-3xl mx-auto text-lg md:text-xl mb-10">
+        Relive the most pivotal moments of Nepal's startup history. From our inaugural summit in 2023 to the upcoming 5-day innovation festival in 2025.
+      </p>
+      <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-surface-container-high border border-outline-variant/20">
+        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+        <span class="text-[11px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Upcoming Innovation Festival · Media Archive 2025</span>
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block content %}
+  <section class="content-section bg-surface-container-lowest" id="events">
+    <div class="page-shell space-y-8">
+      <article class="rounded-3xl bg-gradient-to-br from-surface-container-low to-surface border border-primary/30 p-8 md:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.35)]" data-reveal>
+        <div class="flex flex-wrap items-center gap-3 mb-5">
+          <span class="px-3 py-1 rounded-full bg-primary/20 text-primary text-xs uppercase tracking-[0.2em]">Upcoming</span>
+          <span class="text-xs uppercase tracking-[0.3em] text-on-surface-variant">MEDIA ARCHIVE · 2025</span>
+        </div>
+        <p class="text-sm uppercase tracking-[0.2em] text-on-surface-variant mb-2">2025 / Upcoming</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">Startup Summit Nepal 2025</h2>
+        <p class="text-on-surface-variant text-lg max-w-4xl mb-7">Our most ambitious event yet, featuring a 5-day innovation festival combining tech and entrepreneurship.</p>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch">
+          <div class="rounded-xl overflow-hidden border border-outline-variant/20 lg:col-span-1" data-parallax data-parallax-speed="0.08">
+            <img src="/media/img1.jpeg" alt="Innovation festival preview" class="w-full h-full min-h-64 object-cover" />
+          </div>
+          <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4" data-stagger>
+            <div class="rounded-xl p-4 bg-surface border border-outline-variant/20 hover:border-primary/35 transition-all" data-reveal>
+              <div class="flex items-center justify-between">
+                <div class="w-9 h-9 rounded-lg bg-primary/15 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-lg">code</span></div>
+                <span class="text-[10px] uppercase tracking-[0.22em] text-on-surface-variant">Track</span>
+              </div>
+              <p class="text-2xl font-bold mt-3">Hackathon</p>
+              <p class="text-xs text-on-surface-variant mt-1">Build-and-ship sprint</p>
+            </div>
+            <div class="rounded-xl p-4 bg-surface border border-outline-variant/20 hover:border-primary/35 transition-all" data-reveal>
+              <div class="flex items-center justify-between">
+                <div class="w-9 h-9 rounded-lg bg-primary/15 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-lg">campaign</span></div>
+                <span class="text-[10px] uppercase tracking-[0.22em] text-on-surface-variant">Core</span>
+              </div>
+              <p class="text-2xl font-bold mt-3">Summit</p>
+              <p class="text-xs text-on-surface-variant mt-1">Main-stage sessions</p>
+            </div>
+            <div class="rounded-xl p-4 bg-surface border border-outline-variant/20 hover:border-primary/35 transition-all" data-reveal>
+              <div class="flex items-center justify-between">
+                <div class="w-9 h-9 rounded-lg bg-primary/15 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-lg">groups</span></div>
+                <span class="text-[10px] uppercase tracking-[0.22em] text-on-surface-variant">Community</span>
+              </div>
+              <p class="text-2xl font-bold mt-3">Networking</p>
+              <p class="text-xs text-on-surface-variant mt-1">Founder and investor meetups</p>
+            </div>
+            <div class="rounded-xl p-4 bg-surface border border-outline-variant/20 hover:border-primary/35 transition-all" data-reveal>
+              <div class="flex items-center justify-between">
+                <div class="w-9 h-9 rounded-lg bg-primary/15 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-lg">eco</span></div>
+                <span class="text-[10px] uppercase tracking-[0.22em] text-on-surface-variant">Theme</span>
+              </div>
+              <p class="text-2xl font-bold mt-3">AI &amp; Sustainability</p>
+              <p class="text-xs text-on-surface-variant mt-1">Responsible innovation agenda</p>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="inline-block mt-7 text-primary text-sm uppercase tracking-[0.2em]">View Event Details →</a>
+      </article>
+
+      <article class="rounded-3xl bg-surface-container-low border border-outline-variant/20 p-8 md:p-10" data-reveal>
+        <div class="flex flex-wrap items-center gap-3 mb-5">
+          <span class="px-3 py-1 rounded-full bg-surface text-on-surface text-xs uppercase tracking-[0.2em] border border-outline-variant/20">Completed</span>
+          <span class="px-3 py-1 rounded-full bg-surface text-primary text-xs uppercase tracking-[0.2em] border border-primary/20">Winner: Taximandu</span>
+          <span class="text-xs uppercase tracking-[0.3em] text-on-surface-variant">MEDIA ARCHIVE · 2024</span>
+        </div>
+        <p class="text-sm uppercase tracking-[0.2em] text-on-surface-variant mb-2">2024 / Completed</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">Startup Summit Nepal 2024</h2>
+        <p class="text-on-surface-variant text-lg max-w-4xl mb-7">Expanded reach with a two-day format, featuring enhanced networking and diverse programming.</p>
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-4">
+          <div class="rounded-xl overflow-hidden border border-outline-variant/20 lg:col-span-1" data-parallax data-parallax-speed="0.09">
+            <img src="/media/img2.jpeg" alt="Summit 2024 moments" class="w-full h-full min-h-36 object-cover" />
+          </div>
+          <div class="rounded-xl p-4 bg-surface border border-outline-variant/20">
+            <p class="text-3xl font-black text-primary">500+</p>
+            <p class="text-[11px] uppercase tracking-[0.22em] text-on-surface-variant mt-1">Attendees</p>
+          </div>
+          <div class="rounded-xl p-4 bg-surface border border-outline-variant/20">
+            <p class="text-3xl font-black text-primary">35</p>
+            <p class="text-[11px] uppercase tracking-[0.22em] text-on-surface-variant mt-1">Speakers</p>
+          </div>
+          <div class="rounded-xl p-4 bg-surface border border-outline-variant/20">
+            <p class="text-3xl font-black text-primary">8</p>
+            <p class="text-[11px] uppercase tracking-[0.22em] text-on-surface-variant mt-1">Startups</p>
+          </div>
+          <div class="rounded-xl p-4 bg-surface border border-outline-variant/20">
+            <p class="text-3xl font-black text-primary">15</p>
+            <p class="text-[11px] uppercase tracking-[0.22em] text-on-surface-variant mt-1">Partners</p>
+          </div>
+        </div>
+        <a href="#" class="inline-block mt-7 text-primary text-sm uppercase tracking-[0.2em]">View Event Details →</a>
+      </article>
+
+      <article class="rounded-3xl bg-surface-container-low border border-outline-variant/20 p-8 md:p-10" data-reveal>
+        <div class="flex flex-wrap items-center gap-3 mb-5">
+          <span class="px-3 py-1 rounded-full bg-surface text-on-surface text-xs uppercase tracking-[0.2em] border border-outline-variant/20">Inaugural</span>
+          <span class="px-3 py-1 rounded-full bg-surface text-primary text-xs uppercase tracking-[0.2em] border border-primary/20">Winner: Intern Nepal</span>
+          <span class="text-xs uppercase tracking-[0.3em] text-on-surface-variant">MEDIA ARCHIVE · 2023</span>
+        </div>
+        <p class="text-sm uppercase tracking-[0.2em] text-on-surface-variant mb-2">2023 / Inaugural</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">Startup Summit Nepal 2023</h2>
+        <p class="text-on-surface-variant text-lg max-w-4xl mb-7">The inaugural summit fostering collaboration and growth in Nepal's startup ecosystem.</p>
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-4">
+          <div class="rounded-xl overflow-hidden border border-outline-variant/20 lg:col-span-1" data-parallax data-parallax-speed="0.1">
+            <img src="/media/img3.jpeg" alt="Inaugural summit moments" class="w-full h-full min-h-36 object-cover" />
+          </div>
+          <div class="rounded-xl p-4 bg-surface border border-outline-variant/20">
+            <p class="text-3xl font-black text-primary">350+</p>
+            <p class="text-[11px] uppercase tracking-[0.22em] text-on-surface-variant mt-1">Attendees</p>
+          </div>
+          <div class="rounded-xl p-4 bg-surface border border-outline-variant/20">
+            <p class="text-3xl font-black text-primary">27</p>
+            <p class="text-[11px] uppercase tracking-[0.22em] text-on-surface-variant mt-1">Speakers</p>
+          </div>
+          <div class="rounded-xl p-4 bg-surface border border-outline-variant/20">
+            <p class="text-3xl font-black text-primary">5</p>
+            <p class="text-[11px] uppercase tracking-[0.22em] text-on-surface-variant mt-1">Startups</p>
+          </div>
+          <div class="rounded-xl p-4 bg-surface border border-outline-variant/20">
+            <p class="text-3xl font-black text-primary">11</p>
+            <p class="text-[11px] uppercase tracking-[0.22em] text-on-surface-variant mt-1">Partners</p>
+          </div>
+        </div>
+        <a href="#" class="inline-block mt-7 text-primary text-sm uppercase tracking-[0.2em]">View Event Details →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="content-section bg-surface" id="gallery">
+    <div class="page-shell" data-reveal>
+      <h3 class="text-4xl font-bold tracking-tight mb-10">Media Highlights.</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4" data-stagger>
+        <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-outline-variant/20 relative"><img src="/media/img4.jpeg" alt="Archive image one" class="w-full h-full object-cover" data-parallax data-parallax-speed="0.06" /><span class="absolute left-4 bottom-4 text-xs tracking-[0.2em] text-white/90">ARCHIVE_IMG_1.JPG</span></div>
+        <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-outline-variant/20 relative"><img src="/media/img5.jpeg" alt="Archive image two" class="w-full h-full object-cover" data-parallax data-parallax-speed="0.09" /><span class="absolute left-4 bottom-4 text-xs tracking-[0.2em] text-white/90">ARCHIVE_IMG_2.JPG</span></div>
+        <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-outline-variant/20 relative"><img src="/media/img6.jpeg" alt="Archive image three" class="w-full h-full object-cover" data-parallax data-parallax-speed="0.07" /><span class="absolute left-4 bottom-4 text-xs tracking-[0.2em] text-white/90">ARCHIVE_IMG_3.JPG</span></div>
+        <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-outline-variant/20 relative"><img src="/media/img7.jpeg" alt="Archive image four" class="w-full h-full object-cover" data-parallax data-parallax-speed="0.1" /><span class="absolute left-4 bottom-4 text-xs tracking-[0.2em] text-white/90">ARCHIVE_IMG_4.JPG</span></div>
+        <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-outline-variant/20 relative"><img src="/media/img8.jpeg" alt="Archive image five" class="w-full h-full object-cover" data-parallax data-parallax-speed="0.05" /><span class="absolute left-4 bottom-4 text-xs tracking-[0.2em] text-white/90">ARCHIVE_IMG_5.JPG</span></div>
+        <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-outline-variant/20 relative"><img src="/media/img9.jpeg" alt="Archive image six" class="w-full h-full object-cover" data-parallax data-parallax-speed="0.08" /><span class="absolute left-4 bottom-4 text-xs tracking-[0.2em] text-white/90">ARCHIVE_IMG_6.JPG</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section bg-surface-container-lowest" id="proposal">
+    <div class="page-shell" data-reveal>
+      <p class="page-kicker">Strategic Partner</p>
+      <h3 class="text-4xl font-bold tracking-tight mb-4">Principal Sponsorship Proposal · Nepal AI Summit 2026</h3>
+      <p class="text-on-surface-variant max-w-4xl mb-8">Dated 20th March 2026. Addressed to Suman Pokharel, Deputy CEO, Global IME Bank Limited. Proposal issued by The Startup Network Nepal for principal sponsorship of Nepal AI Summit 2026, in collaboration with Oorja World (USA), accelerated by AWS, with US Embassy Nepal as Strategic Partner.</p>
+
+      <div class="rounded-2xl p-6 bg-surface border border-outline-variant/20 mb-6" data-reveal>
+        <h4 class="text-2xl font-bold mb-3">Why This Summit Matters</h4>
+        <p class="text-on-surface-variant leading-relaxed">Nepal is entering a decisive digital transformation phase, where AI will shape banking, fintech, digital payments, risk management, and financial inclusion. The summit convenes national and international AI leaders, regulators, policymakers, innovators, investors, developers, and industry experts.</p>
+      </div>
+
+      <div class="rounded-2xl p-6 bg-surface border border-outline-variant/20 mb-6" data-reveal>
+        <h4 class="text-2xl font-bold mb-3">Strategic Relevance for Global IME Bank</h4>
+        <p class="text-on-surface-variant leading-relaxed">As one of Nepal's leading financial institutions, Global IME Bank can use this platform to strengthen leadership in AI-driven banking transformation, digital innovation partnerships, and smart financial services aligned with Nepal's AI-powered economy.</p>
+      </div>
+
+      <div class="rounded-2xl p-6 bg-surface border border-primary/30 mb-6" data-reveal>
+        <h4 class="text-2xl font-bold mb-3">Principal Sponsorship Offer</h4>
+        <p class="text-on-surface-variant mb-4">Proposed contribution: <span class="text-primary font-bold">NPR 0,00,000</span></p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" data-stagger>
+          <div class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="font-bold mb-1">Title Positioning</p><p class="text-sm text-on-surface-variant">"Nepal AI Summit 2026 titled by Global IME Bank Limited" with top-tier visibility.</p></div>
+          <div class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="font-bold mb-1">Leadership Visibility</p><p class="text-sm text-on-surface-variant">CEO/DCEO keynote opportunity and participation in high-impact panels.</p></div>
+          <div class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="font-bold mb-1">Premium Brand Exposure</p><p class="text-sm text-on-surface-variant">Stage branding, digital campaigns, press releases, website and partner communications.</p></div>
+          <div class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="font-bold mb-1">Exclusive Stall</p><p class="text-sm text-on-surface-variant">Dedicated activation space for digital banking, AI products, and customer engagement.</p></div>
+          <div class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="font-bold mb-1">Innovation Access</p><p class="text-sm text-on-surface-variant">Direct engagement with startups, developers, and collaboration opportunities.</p></div>
+          <div class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="font-bold mb-1">VIP & Talent Pipeline</p><p class="text-sm text-on-surface-variant">VIP networking and access to emerging AI talent and entrepreneurs.</p></div>
+        </div>
+      </div>
+
+      <div class="rounded-2xl p-6 bg-surface border border-outline-variant/20" data-reveal>
+        <h4 class="text-2xl font-bold mb-3">Partnership Impact</h4>
+        <p class="text-on-surface-variant leading-relaxed">The convergence of AI and banking is redefining financial services globally. Leading this initiative helps reinforce Global IME Bank's position as a future-ready institution while building early access to fintech innovation and strengthening customer trust.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section bg-surface" id="report-activities">
+    <div class="page-shell" data-reveal>
+      <p class="page-kicker">Event Report 2023-26</p>
+      <h3 class="text-4xl font-bold tracking-tight mb-8">Activities Conducted by The Startup Network Nepal</h3>
+      <div class="space-y-5" data-stagger>
+        <article class="rounded-2xl p-6 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="text-primary text-sm uppercase tracking-[0.2em] mb-2">1. India-Nepal Economic Partnership Summit</p><p class="text-on-surface-variant">TSN partnered with PHD Chamber of Commerce for 2023 and 2024 annual summits to deepen economic engagement across remittance, trade, startups, and policy convergence.</p></article>
+        <article class="rounded-2xl p-6 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="text-primary text-sm uppercase tracking-[0.2em] mb-2">2. Startup Catalyst Program (2023)</p><p class="text-on-surface-variant">Incubated Sayapatri Technologies, Clueless Nepal, GharMa Doctor, and Intern Nepal with mentor-led organizational and financial readiness support. Makeup Durbar accelerated to first seed round.</p></article>
+        <article class="rounded-2xl p-6 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="text-primary text-sm uppercase tracking-[0.2em] mb-2">3. Startup Catalyst Program (2024 Sessions)</p><p class="text-on-surface-variant">Advanced cohort sessions with experts including Vikram Singh (Aloft), Mark Templer (US Embassy), Anukool Bhatnagar, and Sandeep Kamat (Bosch Nepal).</p></article>
+        <article class="rounded-2xl p-6 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="text-primary text-sm uppercase tracking-[0.2em] mb-2">4. Informal Interaction Programs</p><p class="text-on-surface-variant">Convened India-Nepal fintech stakeholders for dialogue on seamless cross-border QR transactions, helping sustain collaboration before market adoption.</p></article>
+        <article class="rounded-2xl p-6 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="text-primary text-sm uppercase tracking-[0.2em] mb-2">5. Startup Summit Nepal 2024</p><p class="text-on-surface-variant">Held 17 Dec 2024 at Aloft Kathmandu Thamel with cross-border policy and startup focus; Taximandu won Best Startup of the Year 2024 (NPR 30,000).</p></article>
+        <article class="rounded-2xl p-6 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="text-primary text-sm uppercase tracking-[0.2em] mb-2">6. Startup Summit Nepal 2023</p><p class="text-on-surface-variant">Held 9 Sep 2023 with global-perspective startup theme, panels, pitching, and networking; Intern Nepal won the pitching contest.</p></article>
+        <article class="rounded-2xl p-6 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="text-primary text-sm uppercase tracking-[0.2em] mb-2">7. Partnership with DMAE, Pulchowk Campus</p><p class="text-on-surface-variant">Academic ecosystem collaboration to bridge student innovation, research, and startup execution pathways.</p></article>
+        <article class="rounded-2xl p-6 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="text-primary text-sm uppercase tracking-[0.2em] mb-2">8. Startup Summit Nepal 2025</p><p class="text-on-surface-variant">National-level conference themed "Fostering Global Collaboration, Building Beyond Borders" with focus on finance, mentorship, regulation, and global market integration.</p></article>
+        <article class="rounded-2xl p-6 bg-surface-container-low border border-outline-variant/20" data-reveal><p class="text-primary text-sm uppercase tracking-[0.2em] mb-2">9. AI Hackathon 2026</p><p class="text-on-surface-variant">24-hour national AI hackathon at Embark College, Pulchowk (15-16 Mar 2026). NagarikAPI emerged as overall winner with an impactful public-service-focused AI solution.</p></article>
+      </div>
+    </div>
+  </section>
+
+  {% include "footer.html" %}
+{% endblock %}

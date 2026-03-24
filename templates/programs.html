@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Programs | The Startup Network Nepal{% endblock %}
+
+{% block hero %}
+<header class="page-hero">
+  <div class="page-shell" data-reveal>
+    <p class="page-kicker">Programs</p>
+    <h1 class="page-title">Institutional-Grade Programs for Startup Growth.</h1>
+    <p class="page-subtitle">From incubation to investor readiness, TSN programs are structured for measurable growth.</p>
+  </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="content-section bg-surface-container-lowest">
+  <div class="page-shell grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-stagger>
+    <article class="rounded-2xl p-6 bg-surface-container-low border border-outline-variant/20" data-reveal><h3 class="text-xl font-bold mb-2">Incubator</h3><p class="text-sm text-on-surface-variant mb-3">3 months of strategic guidance and founder coaching.</p><p class="text-primary text-sm">Cohort-based</p></article>
+    <article class="rounded-2xl p-6 bg-surface-container-low border border-outline-variant/20" data-reveal><h3 class="text-xl font-bold mb-2">Accelerator</h3><p class="text-sm text-on-surface-variant mb-3">6-week scale sprint for validated products.</p><p class="text-primary text-sm">Early-stage ventures</p></article>
+    <article class="rounded-2xl p-6 bg-surface-container-low border border-outline-variant/20" data-reveal><h3 class="text-xl font-bold mb-2">Founder Circle</h3><p class="text-sm text-on-surface-variant mb-3">Community and peer support across sectors.</p><p class="text-primary text-sm">Lifetime network</p></article>
+    <article class="rounded-2xl p-6 bg-surface-container-low border border-outline-variant/20" data-reveal><h3 class="text-xl font-bold mb-2">Mentor Access</h3><p class="text-sm text-on-surface-variant mb-3">One-on-one matching with domain experts.</p><p class="text-primary text-sm">On-demand</p></article>
+    <article class="rounded-2xl p-6 bg-surface-container-low border border-outline-variant/20" data-reveal><h3 class="text-xl font-bold mb-2">Investor Readiness</h3><p class="text-sm text-on-surface-variant mb-3">Pitch craft, financial narrative, and diligence prep.</p><p class="text-primary text-sm">Demo-day focused</p></article>
+    <article class="rounded-2xl overflow-hidden border border-outline-variant/20" data-reveal>
+      <img src="/media/img4.jpeg" alt="Program workshops" class="w-full h-full min-h-48 object-cover" data-parallax data-parallax-speed="0.09" />
+    </article>
+  </div>
+</section>
+{% include "footer.html" %}
+{% endblock %}

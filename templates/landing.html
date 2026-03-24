@@ -1,56 +1,386 @@
 {% extends "base.html" %}
 
-{% block title %}{{ site.title }}{% endblock %}
+{% block title %}The Startup Network Nepal{% endblock %}
+
+{% block head_extra %}
+  <style>
+    .bw-light {
+      background: #efeeea;
+      color: #0c0c0c;
+    }
+
+    .bw-dark {
+      background: #060606;
+      color: #f5f4f0;
+    }
+
+    .premium-card-light {
+      background: #f8f7f3;
+      border: 1px solid rgba(12, 12, 12, 0.16);
+      border-radius: 0.85rem;
+    }
+
+    .premium-card-dark {
+      background: #101010;
+      border: 1px solid rgba(172, 199, 255, 0.2);
+      border-radius: 0.85rem;
+    }
+
+    .ink-muted {
+      color: rgba(12, 12, 12, 0.72);
+    }
+
+    .chalk-muted {
+      color: rgba(229, 226, 225, 0.74);
+    }
+  </style>
+{% endblock %}
 
 {% block content %}
-<section class="min-h-screen flex items-center justify-center px-6">
-  <div class="max-w-5xl w-full py-24">
-    <header class="text-center mb-14">
-      <h1 class="text-5xl md:text-7xl font-bold tracking-tight">{{ site.title }}</h1>
-      <p class="mt-4 text-xl md:text-2xl text-white/85">{{ site.tagline }}</p>
-      <p class="mt-6 text-lg text-white/80">
-        <span>{{ site.event_date }}</span>
-        <span class="mx-2">|</span>
-        <span>{{ site.venue }}</span>
-      </p>
-
-      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="{{ site.tickets_url|default:'#' }}"
-           class="rounded-xl bg-white text-black px-6 py-3 font-semibold hover:bg-white/90 transition">
-          {{ site.tickets_label|default:'Tickets' }}
-        </a>
-        <a href="{{ site.schedule_url|default:'#' }}"
-           class="rounded-xl border border-white/60 px-6 py-3 font-semibold hover:bg-white/10 transition">
-          View Schedule
-        </a>
-      </div>
-
-      {% if site.community_url %}
-        <p class="mt-4 text-sm text-white/70">
-          Join our community:
-          <a href="{{ site.community_url }}" class="underline" target="_blank" rel="noreferrer">{{ site.community_url }}</a>
+  <section class="content-section bw-light" id="about">
+    <div class="page-shell grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div data-reveal>
+        <p class="text-[11px] uppercase tracking-[0.35em] text-[#1d4fd7] mb-6">- Our Mission</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-7">The Engine of Nepal's Innovation.</h2>
+        <p class="ink-muted text-lg leading-relaxed">
+          TSN is a catalyst for the next generation of Nepali entrepreneurs. We believe that world-class companies can be built in Kathmandu, powered by local talent and global perspectives.
         </p>
-      {% endif %}
-    </header>
-
-    <section class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-6">Speakers</h2>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {% for speaker in speakers %}
-          <article class="rounded-xl border border-white/15 bg-black/20 p-5">
-            <h3 class="text-xl font-semibold">{{ speaker.name }}</h3>
-            <p class="text-white/70 text-sm mt-1">{{ speaker.title }}</p>
-            <p class="text-white/85 mt-3">{{ speaker.topic }}</p>
-            {% if speaker.image_url %}
-              <a class="inline-block mt-4 text-sm underline" href="{{ speaker.image_url }}" target="_blank" rel="noreferrer">Profile Image</a>
-            {% endif %}
-          </article>
-        {% empty %}
-          <p class="text-white/70">No speakers published yet. Add speakers in admin.</p>
-        {% endfor %}
       </div>
-    </section>
-  </div>
-</section>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="programs" data-stagger>
+        <div class="sm:col-span-2 rounded-2xl overflow-hidden border border-black/20" data-parallax data-parallax-speed="0.08" data-parallax-scale="1.03">
+          <img src="/media/ai-summit.jpeg" alt="AI Summit 2026 preview" class="w-full h-56 object-cover" />
+        </div>
+        <div class="p-5 premium-card-light"><p class="text-[#1d4fd7] text-3xl font-black mb-2">01</p><h3 class="font-bold mb-2">Strategic Programs</h3><p class="text-sm ink-muted">Incubation and structured guidance.</p></div>
+        <div class="p-5 premium-card-light"><p class="text-[#1d4fd7] text-3xl font-black mb-2">02</p><h3 class="font-bold mb-2">Mentorship &amp; Growth</h3><p class="text-sm ink-muted">Access to global industry experts.</p></div>
+        <div class="p-5 premium-card-light"><p class="text-[#1d4fd7] text-3xl font-black mb-2">03</p><h3 class="font-bold mb-2">Asia-Wide Network</h3><p class="text-sm ink-muted">Cross-border startup ecosystem.</p></div>
+        <div class="p-5 premium-card-light"><p class="text-[#1d4fd7] text-3xl font-black mb-2">04</p><h3 class="font-bold mb-2">Sustainable Scaling</h3><p class="text-sm ink-muted">Building regional innovation leadership.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section bw-light" id="events">
+    <div class="page-shell flex flex-col md:flex-row md:items-center justify-between gap-6" data-reveal>
+      <div>
+        <h3 class="text-3xl font-bold mb-2">Our Journey Since Launch</h3>
+        <p class="ink-muted">Explore milestone events and founders stories from 2023 to 2025.</p>
+      </div>
+      <a href="{% url 'main:events' %}" class="inline-block px-6 py-3 rounded-lg bg-primary text-on-primary font-bold">Open Events Archive</a>
+    </div>
+    <div class="page-shell mt-8 grid grid-cols-[80px_1fr] md:grid-cols-[120px_1fr] gap-4" data-stagger>
+      <div class="text-2xl md:text-3xl font-bold">2025</div>
+      <div class="premium-card-light p-5" data-reveal data-parallax data-parallax-speed="0.05">Startup Summit Nepal 2025 · 5-day innovation format and expanded regional partnerships.</div>
+      <div class="text-2xl md:text-3xl font-bold">2024</div>
+      <div class="premium-card-light p-5" data-reveal data-parallax data-parallax-speed="0.06">Startup Summit Nepal 2024 · two-day summit with 500+ participants and cross-border voices.</div>
+      <div class="text-2xl md:text-3xl font-bold">2023</div>
+      <div class="premium-card-light p-5" data-reveal data-parallax data-parallax-speed="0.07">Startup Summit Nepal 2023 · inaugural platform for founders and startup pitching.</div>
+    </div>
+  </section>
+
+  <section class="content-section bw-dark" id="ai-summit">
+    <div class="page-shell">
+      <div class="mb-12" data-reveal>
+        <h3 class="text-3xl md:text-4xl font-bold mb-4">AI Summit 2026</h3>
+        <p class="chalk-muted max-w-3xl">Kathmandu · April 3-5 · Policy, Technology and Development.</p>
+      </div>
+
+      <div class="mb-14" data-reveal>
+        <p class="text-[11px] uppercase tracking-[0.35em] text-primary mb-5">Speakers</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" data-stagger>
+          <article class="premium-card-dark p-5" data-reveal><p class="font-bold mb-1">Dr. Sudeep Rauniar</p><p class="text-sm chalk-muted">AI Policy and Innovation</p></article>
+          <article class="premium-card-dark p-5" data-reveal><p class="font-bold mb-1">Piyush Mahat</p><p class="text-sm chalk-muted">Founder Ecosystem Growth</p></article>
+          <article class="premium-card-dark p-5" data-reveal><p class="font-bold mb-1">Mark Templer</p><p class="text-sm chalk-muted">Cross-Border Collaboration</p></article>
+          <article class="premium-card-dark p-5" data-reveal><p class="font-bold mb-1">Sandeep Kamat</p><p class="text-sm chalk-muted">Industry and Deeptech</p></article>
+        </div>
+      </div>
+
+      <div class="mb-14" data-reveal>
+        <p class="text-[11px] uppercase tracking-[0.35em] text-primary mb-5">Timetable</p>
+        <p class="chalk-muted mb-3">Schedule</p>
+        <p class="chalk-muted mb-1">Three days of talks, community, and builder sessions.</p>
+        <p class="chalk-muted mb-6">Preliminary schedule (subject to change on the event day).</p>
+
+        <div class="space-y-6" data-stagger>
+          <article class="premium-card-dark p-5 md:p-6" data-reveal data-parallax data-parallax-speed="0.04">
+            <p class="text-primary text-xs uppercase tracking-[0.2em] mb-1">Day 1</p>
+            <p class="font-bold mb-4">April 3 · Talks + Panel</p>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm border-collapse min-w-[760px]">
+                <thead>
+                  <tr class="border-b border-outline-variant/30 text-left">
+                    <th class="py-3 pr-4 chalk-muted font-semibold">Time</th>
+                    <th class="py-3 pr-4 chalk-muted font-semibold">Speaker</th>
+                    <th class="py-3 chalk-muted font-semibold">Session</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">8:30 am</td><td class="py-3 pr-4">-</td><td class="py-3">Doors open</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">9:15 am</td><td class="py-3 pr-4">-</td><td class="py-3">Welcome + opening talk</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">9:45 am</td><td class="py-3 pr-4">Manu Chatterjee</td><td class="py-3">What AI Actually Does: From Unstructured Chaos to Intelligent Systems</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">10:15 am</td><td class="py-3 pr-4">Amit Timalsina</td><td class="py-3">Automating Clinical Trial Reviews using Generative AI</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">10:50 am</td><td class="py-3 pr-4">Sayantika Banik</td><td class="py-3">The Art &amp; Science of Designing LLM Systems</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">11:20 am</td><td class="py-3 pr-4">Haihao Liu</td><td class="py-3">Building humanity-first AI for the 22nd century</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">11:50 am</td><td class="py-3 pr-4">Dr. Dovan Rai</td><td class="py-3">Does AI Understand? AI, Understanding, and Agency</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">12:20 pm</td><td class="py-3 pr-4">-</td><td class="py-3">Lunch / break / networking (12:20 pm - 1:40 pm)</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">1:40 pm</td><td class="py-3 pr-4">Vlad Dyachenko</td><td class="py-3">The Perfect Programming Language for the AI Era: How Should It Look?</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">2:10 pm</td><td class="py-3 pr-4">Saugat Acharya</td><td class="py-3">Evalobility: Why PMs, Designers, and Engineers Now Share the Same Dashboard</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">2:45 pm</td><td class="py-3 pr-4">Pranjal Timsina</td><td class="py-3">AI &amp; Security</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">3:15 pm</td><td class="py-3 pr-4">Dijup Tuladhar</td><td class="py-3">AI Is Redefining Design Leadership</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">3:50 pm</td><td class="py-3 pr-4">Alok Khatri, Hempal Shrestha, Prajani KC, Roshan Pokhrel</td><td class="py-3">Panel discussion: Who owns AI in an organization</td></tr>
+                  <tr><td class="py-3 pr-4">4:40 pm</td><td class="py-3 pr-4">-</td><td class="py-3">Closing</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="premium-card-dark p-5 md:p-6" data-reveal data-parallax data-parallax-speed="0.05">
+            <p class="text-primary text-xs uppercase tracking-[0.2em] mb-1">Day 2</p>
+            <p class="font-bold mb-4">April 4 · Builders + Product</p>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm border-collapse min-w-[760px]">
+                <thead>
+                  <tr class="border-b border-outline-variant/30 text-left">
+                    <th class="py-3 pr-4 chalk-muted font-semibold">Time</th>
+                    <th class="py-3 pr-4 chalk-muted font-semibold">Speaker</th>
+                    <th class="py-3 chalk-muted font-semibold">Session</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">8:30 am</td><td class="py-3 pr-4">-</td><td class="py-3">Doors open</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">9:15 am</td><td class="py-3 pr-4">Piyush Mahat</td><td class="py-3">Welcome back + day overview</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">9:45 am</td><td class="py-3 pr-4">Mark Templer</td><td class="py-3">Global Collaboration for AI Builders</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">10:20 am</td><td class="py-3 pr-4">Sandeep Kamat</td><td class="py-3">From Prototype to Product: Building AI in Real Markets</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">10:55 am</td><td class="py-3 pr-4">Anukool Bhatnagar</td><td class="py-3">Operating AI Teams Across Borders</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">11:30 am</td><td class="py-3 pr-4">Founder Roundtable</td><td class="py-3">What broke, what worked, what scaled</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">12:15 pm</td><td class="py-3 pr-4">-</td><td class="py-3">Lunch / break / networking (12:15 pm - 1:30 pm)</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">1:30 pm</td><td class="py-3 pr-4">Technical Mentors</td><td class="py-3">Hands-on clinics: data, infra, and deployment</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">2:30 pm</td><td class="py-3 pr-4">Product Panel</td><td class="py-3">Designing trustworthy AI experiences</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">3:30 pm</td><td class="py-3 pr-4">Startup Coaches</td><td class="py-3">Pitch polishing and demo prep</td></tr>
+                  <tr><td class="py-3 pr-4">4:30 pm</td><td class="py-3 pr-4">-</td><td class="py-3">Community mixer + day close</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="premium-card-dark p-5 md:p-6" data-reveal data-parallax data-parallax-speed="0.06">
+            <p class="text-primary text-xs uppercase tracking-[0.2em] mb-1">Day 3</p>
+            <p class="font-bold mb-4">April 5 · Demo Day + Awards</p>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm border-collapse min-w-[760px]">
+                <thead>
+                  <tr class="border-b border-outline-variant/30 text-left">
+                    <th class="py-3 pr-4 chalk-muted font-semibold">Time</th>
+                    <th class="py-3 pr-4 chalk-muted font-semibold">Speaker</th>
+                    <th class="py-3 chalk-muted font-semibold">Session</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">8:30 am</td><td class="py-3 pr-4">-</td><td class="py-3">Doors open + registration</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">9:15 am</td><td class="py-3 pr-4">Organizing Team</td><td class="py-3">Demo day kickoff</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">9:40 am</td><td class="py-3 pr-4">Startup Cohort</td><td class="py-3">Startup demos: Batch A</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">10:40 am</td><td class="py-3 pr-4">Startup Cohort</td><td class="py-3">Startup demos: Batch B</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">11:40 am</td><td class="py-3 pr-4">Jury Panel</td><td class="py-3">Jury Q&amp;A and scoring</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">12:20 pm</td><td class="py-3 pr-4">-</td><td class="py-3">Lunch / networking (12:20 pm - 1:30 pm)</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">1:30 pm</td><td class="py-3 pr-4">Investors</td><td class="py-3">Investor-startup matchmaking</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">2:30 pm</td><td class="py-3 pr-4">Policy Leaders</td><td class="py-3">AI policy and ecosystem commitments</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">3:20 pm</td><td class="py-3 pr-4">Summit Partners</td><td class="py-3">Partnership announcements</td></tr>
+                  <tr class="border-b border-outline-variant/15"><td class="py-3 pr-4">4:00 pm</td><td class="py-3 pr-4">Jury + Organizers</td><td class="py-3">Awards ceremony</td></tr>
+                  <tr><td class="py-3 pr-4">4:40 pm</td><td class="py-3 pr-4">-</td><td class="py-3">Closing</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="mb-14" id="tickets" data-reveal>
+        <p class="text-[11px] uppercase tracking-[0.35em] text-primary mb-5">Ticket Price</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5" data-stagger>
+          <article class="premium-card-dark p-6" data-reveal>
+            <p class="text-xs uppercase tracking-[0.2em] chalk-muted mb-3">Student Pass</p>
+            <p class="text-4xl font-black mb-2">NPR 1,500</p>
+            <p class="text-sm chalk-muted">Main stage + networking zone.</p>
+            <button type="button" class="mt-4 inline-flex w-full items-center justify-center rounded-lg border border-primary/30 px-4 py-2 text-sm font-bold text-primary js-pass-select" data-pass="student">Choose Student</button>
+          </article>
+          <article class="premium-card-dark p-6 border-2 border-primary" data-reveal>
+            <p class="text-xs uppercase tracking-[0.2em] text-primary mb-3">Pro Pass</p>
+            <p class="text-4xl font-black mb-2">NPR 2,500</p>
+            <p class="text-sm chalk-muted">All sessions + workshops + founder mixer.</p>
+            <button type="button" class="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-bold text-on-primary js-pass-select" data-pass="pro">Choose Pro</button>
+          </article>
+          <article class="premium-card-dark p-6" data-reveal>
+            <p class="text-xs uppercase tracking-[0.2em] chalk-muted mb-3">VIP Pass</p>
+            <p class="text-4xl font-black mb-2">NPR 5,000</p>
+            <p class="text-sm chalk-muted">Priority access + VIP networking lounge.</p>
+            <button type="button" class="mt-4 inline-flex w-full items-center justify-center rounded-lg border border-primary/30 px-4 py-2 text-sm font-bold text-primary js-pass-select" data-pass="vip">Choose VIP</button>
+          </article>
+        </div>
+
+        <div class="mt-8 premium-card-dark p-6 md:p-8" data-reveal>
+          <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
+            <h4 class="text-2xl font-bold">Book Your Ticket</h4>
+            <p class="text-xs uppercase tracking-[0.2em] chalk-muted">Secure checkout request</p>
+          </div>
+
+          {% if booking_success %}
+            <div class="mb-5 rounded-lg border border-green-400/40 bg-green-400/10 px-4 py-3 text-sm text-green-200">
+              Booking received successfully. Reference: <span class="font-bold">{{ booking_reference }}</span>
+            </div>
+          {% endif %}
+
+          {% if ticket_form.non_field_errors %}
+            <div class="mb-5 rounded-lg border border-red-400/40 bg-red-400/10 px-4 py-3 text-sm text-red-200">
+              {{ ticket_form.non_field_errors }}
+            </div>
+          {% endif %}
+
+          <form method="post" action="{% url 'main:landing' %}#tickets" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {% csrf_token %}
+            <div>
+              <label for="id_full_name" class="mb-2 block text-xs uppercase tracking-[0.2em] chalk-muted">Full Name</label>
+              <input id="id_full_name" name="full_name" type="text" value="{{ ticket_form.full_name.value|default:'' }}" class="w-full rounded-lg border border-outline-variant/30 bg-[#0d0d0d] px-4 py-3" placeholder="Your full name" required>
+              {% if ticket_form.full_name.errors %}<p class="mt-1 text-xs text-red-300">{{ ticket_form.full_name.errors.0 }}</p>{% endif %}
+            </div>
+
+            <div>
+              <label for="id_email" class="mb-2 block text-xs uppercase tracking-[0.2em] chalk-muted">Email</label>
+              <input id="id_email" name="email" type="email" value="{{ ticket_form.email.value|default:'' }}" class="w-full rounded-lg border border-outline-variant/30 bg-[#0d0d0d] px-4 py-3" placeholder="you@example.com" required>
+              {% if ticket_form.email.errors %}<p class="mt-1 text-xs text-red-300">{{ ticket_form.email.errors.0 }}</p>{% endif %}
+            </div>
+
+            <div>
+              <label for="id_phone" class="mb-2 block text-xs uppercase tracking-[0.2em] chalk-muted">Phone</label>
+              <input id="id_phone" name="phone" type="text" value="{{ ticket_form.phone.value|default:'' }}" class="w-full rounded-lg border border-outline-variant/30 bg-[#0d0d0d] px-4 py-3" placeholder="+977-98XXXXXXXX">
+              {% if ticket_form.phone.errors %}<p class="mt-1 text-xs text-red-300">{{ ticket_form.phone.errors.0 }}</p>{% endif %}
+            </div>
+
+            <div>
+              <label for="id_pass_type" class="mb-2 block text-xs uppercase tracking-[0.2em] chalk-muted">Pass Type</label>
+              <select id="id_pass_type" name="pass_type" class="w-full rounded-lg border border-outline-variant/30 bg-[#0d0d0d] px-4 py-3" required>
+                <option value="student" {% if ticket_form.pass_type.value == 'student' %}selected{% endif %}>Student Pass · NPR 1,500</option>
+                <option value="pro" {% if ticket_form.pass_type.value == 'pro' or not ticket_form.pass_type.value %}selected{% endif %}>Pro Pass · NPR 2,500</option>
+                <option value="vip" {% if ticket_form.pass_type.value == 'vip' %}selected{% endif %}>VIP Pass · NPR 5,000</option>
+              </select>
+              {% if ticket_form.pass_type.errors %}<p class="mt-1 text-xs text-red-300">{{ ticket_form.pass_type.errors.0 }}</p>{% endif %}
+            </div>
+
+            <div>
+              <label for="id_quantity" class="mb-2 block text-xs uppercase tracking-[0.2em] chalk-muted">Quantity</label>
+              <input id="id_quantity" name="quantity" type="number" min="1" max="10" value="{{ ticket_form.quantity.value|default:'1' }}" class="w-full rounded-lg border border-outline-variant/30 bg-[#0d0d0d] px-4 py-3" required>
+              {% if ticket_form.quantity.errors %}<p class="mt-1 text-xs text-red-300">{{ ticket_form.quantity.errors.0 }}</p>{% endif %}
+            </div>
+
+            <div class="md:col-span-2">
+              <label for="id_notes" class="mb-2 block text-xs uppercase tracking-[0.2em] chalk-muted">Notes (Optional)</label>
+              <textarea id="id_notes" name="notes" rows="3" class="w-full rounded-lg border border-outline-variant/30 bg-[#0d0d0d] px-4 py-3" placeholder="Any special request">{{ ticket_form.notes.value|default:'' }}</textarea>
+              {% if ticket_form.notes.errors %}<p class="mt-1 text-xs text-red-300">{{ ticket_form.notes.errors.0 }}</p>{% endif %}
+            </div>
+
+            <div class="md:col-span-2">
+              <button type="submit" class="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-bold text-on-primary">Submit Booking</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-primary/30 bg-[#0c0c0c] p-6 md:p-8" data-reveal data-parallax data-parallax-speed="0.03">
+        <p class="text-[11px] uppercase tracking-[0.35em] text-primary mb-4">Countdown to April 5</p>
+        <div id="summit-countdown" class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl" data-stagger>
+          <div class="premium-card-dark p-4" data-reveal><p id="cd-days" class="text-3xl font-black text-primary">00</p><p class="text-xs uppercase tracking-[0.2em] chalk-muted">Days</p></div>
+          <div class="premium-card-dark p-4" data-reveal><p id="cd-hours" class="text-3xl font-black text-primary">00</p><p class="text-xs uppercase tracking-[0.2em] chalk-muted">Hours</p></div>
+          <div class="premium-card-dark p-4" data-reveal><p id="cd-mins" class="text-3xl font-black text-primary">00</p><p class="text-xs uppercase tracking-[0.2em] chalk-muted">Minutes</p></div>
+          <div class="premium-card-dark p-4" data-reveal><p id="cd-secs" class="text-3xl font-black text-primary">00</p><p class="text-xs uppercase tracking-[0.2em] chalk-muted">Seconds</p></div>
+        </div>
+      </div>
+
+      <div class="mt-10 rounded-2xl overflow-hidden border border-primary/25" data-reveal data-parallax data-parallax-speed="0.08" data-parallax-scale="1.02">
+        <img src="/media/ai-summit.jpeg" alt="Summit audience and stage" class="w-full h-64 object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section bw-light" id="team">
+    <div class="page-shell" data-reveal>
+      <h3 class="text-3xl font-bold mb-4">The People Behind TSN</h3>
+      <p class="ink-muted mb-8">A collective of founders, investors, and ecosystem builders.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5" data-stagger>
+        <div class="rounded-2xl overflow-hidden border border-black/15 premium-card-light" data-parallax data-parallax-speed="0.05">
+          <img src="/media/img6.jpeg" alt="TSN leadership" class="w-full h-56 object-cover" />
+          <div class="p-4"><p class="font-bold">TSN Leadership</p><p class="text-sm ink-muted">Core strategy and execution.</p></div>
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-black/15 premium-card-light" data-parallax data-parallax-speed="0.07">
+          <img src="/media/img7.jpeg" alt="Mentors and ecosystem builders" class="w-full h-56 object-cover" />
+          <div class="p-4"><p class="font-bold">Mentors</p><p class="text-sm ink-muted">Expert guidance and network access.</p></div>
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-black/15 premium-card-light" data-parallax data-parallax-speed="0.09">
+          <img src="/media/img8.jpeg" alt="Startup community networking" class="w-full h-56 object-cover" />
+          <div class="p-4"><p class="font-bold">Community</p><p class="text-sm ink-muted">Founder-first ecosystem support.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section bw-dark" id="gallery">
+    <div class="page-shell" data-reveal>
+      <h3 class="text-3xl font-bold mb-8">Gallery</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-stagger>
+        <div class="aspect-square rounded-xl overflow-hidden border border-outline-variant/20"><img src="/media/img2.jpeg" alt="Startup summit crowd" class="w-full h-full object-cover" data-parallax data-parallax-speed="0.08" /></div>
+        <div class="aspect-square rounded-xl overflow-hidden border border-outline-variant/20"><img src="/media/img3.jpeg" alt="Networking moments" class="w-full h-full object-cover" data-parallax data-parallax-speed="0.1" /></div>
+        <div class="aspect-square rounded-xl overflow-hidden border border-outline-variant/20"><img src="/media/img4.jpeg" alt="Panel speakers" class="w-full h-full object-cover" data-parallax data-parallax-speed="0.07" /></div>
+        <div class="aspect-square rounded-xl overflow-hidden border border-outline-variant/20"><img src="/media/img5.jpeg" alt="Founder presentations" class="w-full h-full object-cover" data-parallax data-parallax-speed="0.09" /></div>
+      </div>
+    </div>
+  </section>
+
+  {% include "footer.html" %}
+
+  <script>
+    (function () {
+      var targetDate = new Date('2026-04-05T09:00:00+05:45').getTime();
+      var daysEl = document.getElementById('cd-days');
+      var hoursEl = document.getElementById('cd-hours');
+      var minsEl = document.getElementById('cd-mins');
+      var secsEl = document.getElementById('cd-secs');
+      if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+      function pad(value) {
+        return String(value).padStart(2, '0');
+      }
+
+      function tick() {
+        var now = Date.now();
+        var distance = targetDate - now;
+
+        if (distance <= 0) {
+          daysEl.textContent = '00';
+          hoursEl.textContent = '00';
+          minsEl.textContent = '00';
+          secsEl.textContent = '00';
+          return;
+        }
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+        daysEl.textContent = pad(days);
+        hoursEl.textContent = pad(hours);
+        minsEl.textContent = pad(mins);
+        secsEl.textContent = pad(secs);
+      }
+
+      tick();
+      setInterval(tick, 1000);
+
+      var passSelect = document.getElementById('id_pass_type');
+      var passButtons = Array.prototype.slice.call(document.querySelectorAll('.js-pass-select'));
+      passButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          if (!passSelect) return;
+          passSelect.value = button.getAttribute('data-pass');
+          passSelect.focus();
+        });
+      });
+    })();
+  </script>
 {% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Gallery | The Startup Network Nepal{% endblock %}
+
+{% block hero %}
+<header class="page-hero">
+  <div class="page-shell" data-reveal>
+    <p class="page-kicker">Gallery</p>
+    <h1 class="page-title">Moments That Built the Movement.</h1>
+    <p class="page-subtitle">A visual archive of TSN milestones, founders, and the startup community powering Nepal's innovation era.</p>
+  </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="content-section bg-surface-container-lowest">
+  <div class="page-shell grid grid-cols-2 md:grid-cols-3 gap-4" data-stagger>
+    <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-outline-variant/20" data-reveal><img src="/media/img1.jpeg" alt="Gallery image 1" class="w-full h-full object-cover" data-parallax data-parallax-speed="0.06" /></div>
+    <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-outline-variant/20" data-reveal><img src="/media/img2.jpeg" alt="Gallery image 2" class="w-full h-full object-cover" data-parallax data-parallax-speed="0.08" /></div>
+    <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-outline-variant/20" data-reveal><img src="/media/img3.jpeg" alt="Gallery image 3" class="w-full h-full object-cover" data-parallax data-parallax-speed="0.1" /></div>
+    <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-outline-variant/20" data-reveal><img src="/media/img4.jpeg" alt="Gallery image 4" class="w-full h-full object-cover" data-parallax data-parallax-speed="0.07" /></div>
+    <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-outline-variant/20" data-reveal><img src="/media/img5.jpeg" alt="Gallery image 5" class="w-full h-full object-cover" data-parallax data-parallax-speed="0.09" /></div>
+    <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-outline-variant/20" data-reveal><img src="/media/img6.jpeg" alt="Gallery image 6" class="w-full h-full object-cover" data-parallax data-parallax-speed="0.05" /></div>
+  </div>
+</section>
+{% include "footer.html" %}
+{% endblock %}
